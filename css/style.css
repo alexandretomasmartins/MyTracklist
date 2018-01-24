@@ -1,0 +1,181 @@
+body {
+  background: white;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+audio {
+  width: 800px;
+}
+
+.greenColor {
+  color: green;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.contentSection {
+  display: flex;
+  justify-content: center;
+}
+
+.mainTitle {
+  margin-top: 25px;
+  font-family: Helvetica;
+  font-size: 60px;
+  color: black;
+  text-align: center;
+  width: 100vw;
+}
+
+.burgerMenu {
+  background: black;
+  width: 10px;
+  height: 10px;
+}
+
+.container {
+  height: 100%;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 100px auto 100px;
+  grid-template-areas:
+  "c c c c c c c c c c c c"
+  "c c c c c c c c c c c c"
+  "f f f f f f f f f f f f";
+}
+
+.menu {
+  grid-area: m;
+  display: none;
+}
+
+.content {
+  grid-area: c;
+}
+
+.footer {
+  grid-area: f;
+  text-align: center;
+  margin-top: 50px;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,255,255, 0.8);
+  width: 100%;
+  transition: 0.5s;
+}
+
+.footer:hover {
+  background: rgba(255,255,255, 1);
+}
+
+.navigationGrid {
+  position: fixed;
+}
+
+.firstNavigationGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(6, 30px);
+}
+
+.secondNavigationGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(6, 30px);
+}
+
+.musicCategoryTitle {
+  font-family: Helvetica;
+  font-size: 25px;
+  color: black;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.navigationElement {
+  font-family: Helvetica;
+  font-size: 18px;
+  color: black;
+  display:inline;
+  transition: 0.5s;
+}
+
+.navigationElement:hover {
+  cursor: default;
+  color: green;
+}
+
+.songsGrid {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 800px;
+  margin-bottom: 20px;
+}
+
+.songsTitle {
+  font-family: Helvetica;
+  font-size: 50px;
+  color: black;
+  font-weight: 900;
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+.songName {
+  font-family: Helvetica;
+  font-size: 30px;
+  color: grey;
+  transition: 0.5s;
+}
+
+.songAuthor {
+  font-family: Helvetica;
+  font-size: 30px;
+  color: grey;
+  transition: 0.5s;
+}
+
+.songDuration {
+  font-family: Helvetica;
+  font-size: 30px;
+  color: grey;
+  transition: 0.5s;
+}
+
+.songName:hover, .songAuthor:hover, .songDuration:hover {
+  color: black;
+}
+
+.songsBox {
+  margin-bottom: 40px;
+}
+
+.songsBox:hover {
+  cursor: default;
+}
+
+.followSpotify {
+  padding-bottom: 10px;
+}
+
+.italicTitle {
+  font-style: italic;
+  font-weight: normal;
+  opacity: 0.3;
+}
+
+#audio {
+  padding-top: 10px;
+}
