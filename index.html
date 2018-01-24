@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>MyTracklistbyAlexandreMartins</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <section class="header">
+    <h1 class="mainTitle">
+      <a href="index.html">MyTracklist<span class="italicTitle">byAlexandreMartins</span></a>
+    </h1>
+  </section>
+  <section class="contentSection">
+    <div class="container">
+      <div class="menu">
+        <div class="mainGrid">
+          <div class="navigationGrid">
+            <h2 class="musicCategoryTitle">Mes playlists</h2>
+            <ul class="secondNavigationGrid">
+              <li id="rapfrPlaylist" class="navigationElement">Rap français</li>
+              <li class="navigationElement">Top 50 France</li>
+              <li class="navigationElement">Rap étranger</li>
+              <li class="navigationElement">Top 50 étrangers</li>
+              <li class="navigationElement">Autres</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <h2 class="songsTitle">Parcourir</h2>
+        <div class="songsGrid">
+          <div class="gridOne"></div>
+          <div class="gridTwo"></div>
+          <div class="gridThree"></div>
+        </div>
+      </div>
+      <div class="footer">
+        <audio id="audio" controls="controls">
+      <source src="" type="audio/mp3" />
+      Votre navigateur n'est pas compatible
+      </audio>
+        <br><br>
+        <div class="followSpotify">
+          <iframe src="https://open.spotify.com/follow/1/?uri=spotify:user:11150797984&size=detail&theme=light" width="300" height="56" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="http://localhost:35729/livereload.js" charset="utf-8"></script>
+  <script src="js/musics.js" charset="utf-8"></script>
+  <script>
+    var songsGrid = document.querySelector('.songsGrid');
+    var gridOne = document.querySelector('.gridOne');
+    var gridTwo = document.querySelector('.gridTwo');
+    var gridThree = document.querySelector('.gridThree');
+    for (var i = 0; i < data.songs.length; i++) {
+      gridOne.innerHTML += '<div class="songsBox">' + '<p class="songName">' + data.songs[i].title + '</p>' + '</div>';
+      gridTwo.innerHTML += '<div class="songsBox">' + '<p class="songAuthor">' + data.songs[i].author + '</p>' + '</div>';
+      gridThree.innerHTML += '<div class="songsBox">' + '<p class="songDuration">' + data.songs[i].duration + '</p>' + '</div>';
+    };
+    var songsBox = document.querySelectorAll('.songsBox');
+    var audio = document.querySelector('#audio');
+    var songName = document.querySelectorAll('.songName');
+    var listen = function(songsBox, data, j) {
+      songsBox[j].addEventListener('click', function() {
+        for (var m = 0; m < songName.length; m++) {
+          songName[m].style.color = 'grey';
+          songName[m].style.fontWeight = 'normal';
+        }
+        this.querySelector('.songName').style.color = 'green';
+        this.querySelector('.songName').style.fontWeight = 'bold';
+        audio.setAttribute('src', data.songs[j].src);
+        audio.play();
+      });
+    }
+    for (var j = 0; j < data.songs.length; j++) {
+      listen(songsBox, data, j);
+    };
+  </script>
+</body>
+
+</html>
