@@ -135,21 +135,21 @@ audio {
 
 .songName {
   font-family: Helvetica;
-  font-size: 30px;
+  font-size: 40px;
   color: grey;
   transition: 0.5s;
 }
 
 .songAuthor {
   font-family: Helvetica;
-  font-size: 30px;
+  font-size: 40px;
   color: grey;
   transition: 0.5s;
 }
 
 .songDuration {
   font-family: Helvetica;
-  font-size: 30px;
+  font-size: 40px;
   color: grey;
   transition: 0.5s;
 }
